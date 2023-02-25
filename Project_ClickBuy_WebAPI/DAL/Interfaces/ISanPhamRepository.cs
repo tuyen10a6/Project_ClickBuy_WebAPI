@@ -9,5 +9,7 @@ namespace DAL
     public interface ISanPhamRepository
     {
         List<SanPhamModel> GetAllSanPham();
+        bool AddSanPham(SanPhamModel model);
+        bool UpdateSanPham(int productID, SanPhamModel model);
     }
 }

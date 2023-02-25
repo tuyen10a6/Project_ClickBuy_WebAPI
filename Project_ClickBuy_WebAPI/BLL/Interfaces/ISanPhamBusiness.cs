@@ -11,5 +11,7 @@ namespace BLL.Interfaces
     public  interface ISanPhamBusiness
     {
         List<SanPhamModel> GetAllSanPham();
+        bool AddSanPham(SanPhamModel model);
+        bool UpdateSanPham(int productID, SanPhamModel model);
     }
 }

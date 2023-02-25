@@ -20,5 +20,21 @@ namespace Project_ClickBuy_WebAPI.Controllers
         {
             return _sanphamBusiness.GetAllSanPham();
         }
+
+        [Route("AddSanPham")]
+        [HttpPost]
+        public SanPhamModel AddProduct([FromBody] SanPhamModel model)
+        {
+            _sanphamBusiness.AddSanPham(model);
+            return model;
+
+        }
+        [Route("EditSanPham{id}")]
+        [HttpPost]
+        public SanPhamModel Update(int id, SanPhamModel model)
+        {
+            _sanphamBusiness.UpdateSanPham(id, model);
+            return model;
+        }
     }
 }

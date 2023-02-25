@@ -8,14 +8,13 @@ namespace Model
 {
     public class SanPhamModel
     {
-        public int MaSanPham { get; set; }
-        public string TenSanPham { get; set; }
-        public int? MaHang { get; set; }
-        public string TinhTrangSanPham { get; set; }
-        public string UudaiTraGop { get; set; }
-        public string UuDaiThem { get; set; }
-        public string MoTa { get; set; }
-        public string AnhDaiDien { get; set; }
-        public DateTime NgayTao { get; set; }
+        public int ProductID { get; set; }
+        public string ProductName { get; set; }
+        public int CategoryID { get; set; }
+        public string?  Description { get; set; }
+        public string? ImageURL { get; set; }
+       public int   BrandID { get; set; }
+        public DateTime DateCreated { get; set; }
     }
+
 }
