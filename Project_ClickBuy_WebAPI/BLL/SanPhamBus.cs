@@ -28,5 +28,20 @@ namespace BLL
         {
             return _res.UpdateSanPham( productID , model);
         }
+
+        public bool DeleteSanPham(int productID)
+        {
+            return _res.DeteteSanPham(productID);
+        }
+
+        public List<SanPhamModel> SearchProducts(string productName)
+        {
+            return _res.SearchProduct(productName);
+        }
+        public SanPhamModel GetIDSanPham(int productID)
+        {
+            return _res.GetIDSanPham(productID);
+        }
+
     }
 }

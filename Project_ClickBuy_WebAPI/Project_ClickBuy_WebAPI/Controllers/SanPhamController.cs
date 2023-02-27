@@ -20,6 +20,13 @@ namespace Project_ClickBuy_WebAPI.Controllers
         {
             return _sanphamBusiness.GetAllSanPham();
         }
+        [Route("SearchProduct/{ProductName}")]
+        [HttpGet]
+        public IActionResult SearchProduct(string ProductName)
+        {
+            var listsanpham = _sanphamBusiness.SearchProducts(ProductName);
+            return Ok(listsanpham);
+        }
 
         [Route("AddSanPham")]
         [HttpPost]
@@ -29,12 +36,39 @@ namespace Project_ClickBuy_WebAPI.Controllers
             return model;
 
         }
-        [Route("EditSanPham{id}")]
+        [Route("EditSanPham/{id}")]
         [HttpPost]
         public SanPhamModel Update(int id, SanPhamModel model)
         {
             _sanphamBusiness.UpdateSanPham(id, model);
             return model;
         }
+        [Route("DeleteSanPham/{id}")]
+        [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+            _sanphamBusiness.DeleteSanPham(id);
+            return Ok("Xóa thành công");
+           
+        }
+        [Route("GetByIdProduct/{productId}")]
+        [HttpGet]
+        public IActionResult GetProductWithVariantsAndAttributes(int productId)
+        {
+            try
+            {
+                var product = _sanphamBusiness.GetIDSanPham(productId);
+                if (product == null)
+                {
+                    return NotFound();
+                }
+                return Ok(product);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
     }
 }

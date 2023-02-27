@@ -11,5 +11,9 @@ namespace DAL
         List<SanPhamModel> GetAllSanPham();
         bool AddSanPham(SanPhamModel model);
         bool UpdateSanPham(int productID, SanPhamModel model);
+        bool DeteteSanPham(int productID);
+
+        List<SanPhamModel> SearchProduct(string ProductName);
+        SanPhamModel GetIDSanPham(int productID);
     }
 }

@@ -13,5 +13,8 @@ namespace BLL.Interfaces
         List<SanPhamModel> GetAllSanPham();
         bool AddSanPham(SanPhamModel model);
         bool UpdateSanPham(int productID, SanPhamModel model);
+        bool DeleteSanPham(int productID);
+        List<SanPhamModel> SearchProducts(string productName);
+        SanPhamModel GetIDSanPham(int productID);
     }
 }
