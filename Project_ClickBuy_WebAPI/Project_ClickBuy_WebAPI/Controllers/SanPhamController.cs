@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Model;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Project_ClickBuy_WebAPI.Controllers
 {
@@ -68,6 +70,12 @@ namespace Project_ClickBuy_WebAPI.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
+        }
+        [HttpGet("{id}")]
+        public IActionResult GetProductById(int id)
+        {
+            var result = _sanphamBusiness.GetIDSanPham(id);
+            return Ok(result);
         }
 
     }

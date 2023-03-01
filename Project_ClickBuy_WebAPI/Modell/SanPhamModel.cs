@@ -8,39 +8,32 @@ namespace Model
 {
     public class SanPhamModel
     {
-        public int ProductId { get; set; }
+        public int ProductID { get; set; }
         public string ProductName { get; set; }
         public string Description { get; set; }
         public string ImageURL { get; set; }
         public DateTime DateCreated { get; set; }
         public int BrandID { get; set; }
         public int CategoryID { get; set; }
-        public List<ProductVariantModel> Variants { get; set; }
-        public List<ProductAttributeModel> Attributes { get; set; }
+        public List<ProductVariant> Variants { get; set; } = new List<ProductVariant>();
+        public List<Specification> Attributes { get; set; } = new List<Specification>();
     }
-
-    public class ProductVariantModel
+    public class ProductVariant
     {
-        public int VariantId { get; set; }
-        public int ProductId { get; set; }
+        public int VARRIANTID { get; set; }
+        public string VARRIANNAME { get; set; }
+        public int ProductID { get; set; }
         public string Color { get; set; }
-        public string StorageCapacity { get; set; }
-        public decimal Price { get; set; }
+        public string Capacity { get; set; }
+        public int Price { get; set; }
     }
 
-    public class ProductAttributeModel
+    public class Specification
     {
-        public int AttributeId { get; set; }
-        public string AttributeName { get; set; }
-        public List<ProductAttributeValueModel> AttributeValues { get; set; }
-    }
-
-    public class ProductAttributeValueModel
-    {
-        public int AttributeValueId { get; set; }
-        public int AttributeId { get; set; }
-        public int VariantId { get; set; }
-        public string Value { get; set; }
+        public int SPECIFICATIONSID { get; set; }
+        public string  SPECIFICATIONSNAME { get; set; }
+        public string SPECIFICATIONSVALUE { get; set; }
+        public int ProductID { get; set; }
     }
 
 
