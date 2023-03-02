@@ -38,11 +38,11 @@ namespace Project_ClickBuy_WebAPI.Controllers
             return model;
 
         }
-        [Route("EditSanPham/{id}")]
+        [Route("EditSanPham")]
         [HttpPost]
-        public SanPhamModel Update(int id, SanPhamModel model)
+        public SanPhamModel Update(SanPhamModel model)
         {
-            _sanphamBusiness.UpdateSanPham(id, model);
+            _sanphamBusiness.UpdateSanPham( model);
             return model;
         }
         [Route("DeleteSanPham/{id}")]

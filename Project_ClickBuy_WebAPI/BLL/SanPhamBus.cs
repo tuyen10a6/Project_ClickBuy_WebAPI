@@ -24,9 +24,9 @@ namespace BLL
         {
             return _res.AddSanPham(model);
         }
-        public bool UpdateSanPham(int productID, SanPhamModel model)
+        public bool UpdateSanPham( SanPhamModel model)
         {
-            return _res.UpdateSanPham( productID , model);
+            return _res.UpdateSanPham( model);
         }
         public bool DeleteSanPham(int productID)
         {

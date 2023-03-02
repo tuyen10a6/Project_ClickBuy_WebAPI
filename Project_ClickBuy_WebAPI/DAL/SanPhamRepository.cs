@@ -36,19 +36,18 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                return true;
+                return false;
             }
         }
-
-
-
-        public bool DeteteSanPham(int productID)
+        public bool UpdateSanPham(SanPhamModel model)
         {
-            string msgError = "";
+            var requestJson = model != null ? MessageConvert.SerializeObject(model) : null;
             try
             {
-                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "DeleteProduct",
-                    "@ProductID", productID);
+                string msgError = "";
+                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_product_update",
+                "@request", requestJson
+                );
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
                     throw new Exception(Convert.ToString(result) + msgError);
@@ -57,7 +56,27 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw ex;
+                return false;
+            }
+        }
+        public bool DeteteSanPham(int productID)
+        {
+            try
+            {
+                string msgError = "";
+                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_product_delete",
+                    "@productId", productID
+                );
+                if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(Convert.ToString(result) + msgError);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Handle exception
+                return false;
             }
         }
 
