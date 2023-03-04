@@ -79,7 +79,6 @@ namespace DAL
                 return false;
             }
         }
-
         public List<SanPhamModel> GetAllSanPham()
         {
             string spName = "GetAllProducts";
@@ -101,7 +100,7 @@ namespace DAL
                 var dtVariants = _dbHelper.ExecuteSProcedureReturnDataTable("GetProductVariants", "@ProductId", productID);
                 if (dtVariants.Rows.Count > 0)
                 {
-                    sanPham.Variants = dtVariants.ConvertTo<ProductVariant>().ToList();
+                    sanPham.Variants = dtVariants.ConvertTo<ProductVariants>().ToList();
                 }
 
                 // Lấy danh sách attributes

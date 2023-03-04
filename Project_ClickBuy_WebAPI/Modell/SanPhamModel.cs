@@ -15,10 +15,10 @@ namespace Model
         public DateTime DateCreated { get; set; }
         public int BrandID { get; set; }
         public int CategoryID { get; set; }
-        public List<ProductVariant> Variants { get; set; } = new List<ProductVariant>();
+        public List<ProductVariants> Variants { get; set; } = new List<ProductVariants>();
         public List<Specification> Attributes { get; set; } = new List<Specification>();
     }
-    public class ProductVariant
+    public class ProductVariants
     {
         public int VARRIANTID { get; set; }
         public string VARRIANNAME { get; set; }
@@ -26,6 +26,8 @@ namespace Model
         public string Color { get; set; }
         public string Capacity { get; set; }
         public int Price { get; set; }
+        public string ImageVariant { get; set; }
+             
     }
 
     public class Specification

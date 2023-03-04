@@ -6,6 +6,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddTransient<IDatabaseHelper, DatabaseHelper>();
 builder.Services.AddTransient<ISanPhamRepository, SanPhamRepository>();
 builder.Services.AddScoped<ISanPhamBusiness, SanPhamBus>();
+builder.Services.AddTransient<IProductVariantRepository, ProductVariantRepository>();
+builder.Services.AddScoped<IProductVariantBusiness, ProductVariantBus>();
+
 
 // Add services to the container.
 builder.Services.AddControllers();
