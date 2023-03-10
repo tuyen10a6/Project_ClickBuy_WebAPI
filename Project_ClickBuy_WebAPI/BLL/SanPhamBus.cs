@@ -36,10 +36,21 @@ namespace BLL
         {
             return _res.SearchProduct(productName);
         }
-        public SanPhamModel GetIDSanPham(int productID)
+       
+
+        public List<SanPhamModel> GetProductsByPriceRange(int min, int max)
         {
-            return _res.GetIDSanPham(productID);
+            return _res.GetProductsByPriceRange(min, max);
         }
 
+        public List<SanPhamModel> GetProductMeMoRy(int Value)
+        {
+            return _res.GetProductMemory(Value);
+        }
+
+        public List<SanPhamModel> GetMeMory(int value)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

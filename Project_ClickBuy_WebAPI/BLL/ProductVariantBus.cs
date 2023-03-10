@@ -16,14 +16,16 @@ namespace BLL
         {
             _res = res;
         }
-        public bool AddProductVariant(ProductVariantModel model)
+       
+
+        public bool AddProductVariant(int productID, List<ProductVariantModel> variants)
         {
-            throw new NotImplementedException();
+            return _res.AddProductVariant(productID, variants);
         }
 
         public bool DeteteProductVariant(int VariantID)
         {
-            throw new NotImplementedException();
+            return _res.DeteteProductVariant(VariantID);
         }
 
         public List<ProductVariantModel> GetAllProductVariant()
@@ -37,9 +39,14 @@ namespace BLL
 
         }
 
+        public List<ProductVariantModel> GetProductVariantIdProduct(int ProductID)
+        {
+            return _res.GetProductVariantIdProduct(ProductID);
+        }
+
         public List<ProductVariantModel> SearchProductVariant(string VariantName)
         {
-            throw new NotImplementedException();
+            return _res.SearchProductVariant(VariantName);
         }
 
         public bool UpdateProductVariant(ProductVariantModel model)

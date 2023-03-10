@@ -150,11 +150,27 @@ namespace DAL
                     throw new Exception(Convert.ToString(result) + msgError);
                 }
                 return true;
-            }
+           }
             catch (Exception ex)
             {
                 throw ex;
             }
+        }
+        public List<SanPhamModel> GetProductsByPriceRange(int minPrice, int maxPrice)
+        {
+            var dt = _dbHelper.ExecuteSProcedureReturnDataTable("GetProductsByPriceRange", "@MinPrice", minPrice, "@MaxPrice", maxPrice);
+
+            // Chuyển đổi kết quả trả về sang danh sách các đối tượng SanPhamModel
+            var sanPhams = dt.ConvertTo<SanPhamModel>().ToList();
+
+            return sanPhams;
+        }
+
+        public List<SanPhamModel> GetProductMemory(int value)
+        {
+           var dt = _dbHelper.ExecuteSProcedureReturnDataTable("GetMeMory" , "@Memory", value);
+            var sanPhams = dt.ConvertTo<SanPhamModel>().ToList();
+            return sanPhams;
         }
     }
 }

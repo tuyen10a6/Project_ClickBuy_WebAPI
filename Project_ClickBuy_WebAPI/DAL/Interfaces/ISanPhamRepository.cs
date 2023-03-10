@@ -14,6 +14,7 @@ namespace DAL
         bool DeteteSanPham(int productID);
 
         List<SanPhamModel> SearchProduct(string ProductName);
-        SanPhamModel GetIDSanPham(int productID);
+        List<SanPhamModel> GetProductsByPriceRange(int min , int max);
+        List<SanPhamModel> GetProductMemory(int value);
     }
 }

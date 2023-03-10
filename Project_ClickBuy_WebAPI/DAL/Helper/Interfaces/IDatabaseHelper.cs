@@ -109,6 +109,8 @@ namespace DAL.Helper
         /// <param name="sprocedureName">Procedure Name</param>
         /// <param name="paramObjects">List Param Objects, Each Item include 'ParamName' and 'ParamValue'</param>
         /// <returns>Value return from Store</returns>
+        /// 
+        object ExecuteScalarSProcedureWithTransactions(string storedProcedureName, params SqlParameter[] sqlParams);
         object ExecuteScalarSProcedureWithTransaction(out string msgError, string sprocedureName, params object[] paramObjects);
         /// <summary>
         /// Execute Scalar Procedure query List store and command

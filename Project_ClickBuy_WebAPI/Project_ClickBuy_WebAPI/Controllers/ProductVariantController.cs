@@ -1,6 +1,8 @@
 ﻿using BLL.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Model;
+using System.Diagnostics;
 
 namespace Project_ClickBuy_WebAPI.Controllers
 {
@@ -22,7 +24,7 @@ namespace Project_ClickBuy_WebAPI.Controllers
                 var product = _sanphamBusiness.GetIDProductVariant(productVariantID);
                 if (product == null)
                 {
-                    return NotFound();
+                    return NotFound("Không tìm thấy ProductVariant với ID trên");
                 }
                 return Ok(product);
             }
@@ -30,6 +32,53 @@ namespace Project_ClickBuy_WebAPI.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
+        }
+        [Route("GetIdProduct/{ProductID}")]
+        [HttpGet]
+        public IActionResult GetVariantsIDProduct(int ProductID)
+        {
+            try
+            {
+                var product = _sanphamBusiness.GetProductVariantIdProduct(ProductID);
+                if (product == null)
+                {
+                    return NotFound("Không tìm thấy ID sản phẩm này");
+                }
+                return Ok(product);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+        [Route("AddListProductVariant")]
+        [HttpPost]
+        public IActionResult AddProductVariants(int productId, [FromBody] List<ProductVariantModel> variants)
+        {
+            try
+            {
+                _sanphamBusiness.AddProductVariant(productId, variants);
+                return Ok(productId);
+              
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+        [Route("SearchProducVariant/{VariantName}")]
+        [HttpGet]
+        public IActionResult SearchProductVariant(string VariantName)
+        {
+           var ListProductVariant = _sanphamBusiness.SearchProductVariant(VariantName);
+            return Ok(ListProductVariant);
+        }
+        [Route("DeleteProductVariant")]
+        [HttpGet]
+        public IActionResult DeleteProductVariant(int VariantID)
+        {
+            var result = _sanphamBusiness.DeteteProductVariant(VariantID);
+            return Ok("Xóa thành công");
         }
     }
 }

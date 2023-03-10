@@ -8,12 +8,19 @@ namespace Model
 {
     public class ProductVariantModel
     {
+        
         public int VARRIANTID { get; set; }
         public string VARRIANNAME { get; set; }
         public int ProductID { get; set; }
-        public string COLOR { get; set; }   
-        public string Capacity { get;set; }
+        public string? COLOR { get; set; }   
+        public string? Capacity { get;set; }
         public int PRICE { get; set; }
-        public string ImageVariant { get; set; }
+        public string? ImageVariant { get; set; }
     }
+    public class ListProductVariantModel
+    {
+          public int ProductID { get; set; }
+          public List<ProductVariantModel> ProductVariantModels { get; set; }
+    }
+
 }

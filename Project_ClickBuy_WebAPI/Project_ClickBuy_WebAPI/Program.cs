@@ -2,13 +2,16 @@ using BLL;
 using BLL.Interfaces;
 using DAL;
 using DAL.Helper;
+using DAL.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddTransient<IDatabaseHelper, DatabaseHelper>();
 builder.Services.AddTransient<ISanPhamRepository, SanPhamRepository>();
 builder.Services.AddScoped<ISanPhamBusiness, SanPhamBus>();
 builder.Services.AddTransient<IProductVariantRepository, ProductVariantRepository>();
 builder.Services.AddScoped<IProductVariantBusiness, ProductVariantBus>();
-
+builder.Services.AddTransient<ICategoriesRepository, CategoriesRespository>();
+builder.Services.AddScoped<ICategoriesBusiness, CategoriesBus>();
 
 // Add services to the container.
 builder.Services.AddControllers();

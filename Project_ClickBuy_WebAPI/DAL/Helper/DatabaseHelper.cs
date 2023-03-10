@@ -968,6 +968,11 @@ namespace DAL.Helper
             }
             return result;
         }
+
+        public object ExecuteScalarSProcedureWithTransactions(string storedProcedureName, params SqlParameter[] sqlParams)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
     }
 

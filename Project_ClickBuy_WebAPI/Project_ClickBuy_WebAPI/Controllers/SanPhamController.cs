@@ -53,28 +53,37 @@ namespace Project_ClickBuy_WebAPI.Controllers
             return Ok("Xóa thành công");
            
         }
-        [Route("GetByIdProduct/{productId}")]
+        //[Route("GetByIdProduct/{productId}")]
+        //[HttpGet]
+        //public IActionResult GetProductWithVariantsAndAttributes(int productId)
+        //{
+        //    try
+        //    {
+        //        var product = _sanphamBusiness.GetIDSanPham(productId);
+        //        if (product == null)
+        //        {
+        //            return NotFound();
+        //        }
+        //        return Ok(product);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+        //    }
+        //}
+        [Route("GetMeMoRy/{id}")]
         [HttpGet]
-        public IActionResult GetProductWithVariantsAndAttributes(int productId)
+        public IActionResult GetProductMeMoRy(int id)
         {
-            try
-            {
-                var product = _sanphamBusiness.GetIDSanPham(productId);
-                if (product == null)
-                {
-                    return NotFound();
-                }
-                return Ok(product);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
-            }
+            var result = _sanphamBusiness.GetProductMeMoRy(id);
+            return Ok(result);
+         
         }
-        [HttpGet("{id}")]
-        public IActionResult GetProductById(int id)
+        [Route("GetMin/{min}_Max/{max}")]
+        [HttpGet]
+        public IActionResult GetProductsByPriceRange(int min, int max)
         {
-            var result = _sanphamBusiness.GetIDSanPham(id);
+            var result = _sanphamBusiness.GetProductsByPriceRange(min, max);
             return Ok(result);
         }
 

@@ -1,5 +1,6 @@
 ﻿using Azure.Core;
 using DAL.Helper;
+using Microsoft.Identity.Client;
 using Model;
 using Newtonsoft.Json;
 using System;
@@ -19,14 +20,46 @@ namespace DAL
         {
             _dbHelper = dbHelper;
         }
-        public bool AddProductVariant(ProductVariantModel model)
+        public bool AddProductVariant(int productID, List<ProductVariantModel> variants)
         {
-            throw new NotImplementedException();
+            try
+            {
+                string jsonData = JsonConvert.SerializeObject(variants);
+                string msgError = "";
+                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "AddProductVariant",
+                    new SqlParameter("@ProductID", productID),
+                    new SqlParameter("@JsonData", jsonData)
+                );
+                if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(Convert.ToString(result) + msgError);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
-
         public bool DeteteProductVariant(int VariantID)
         {
-            throw new NotImplementedException();
+            try
+            {
+                string msgError = "";
+                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "DeleteProductVariant",
+                    "@VariantID", VariantID
+                );
+                if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(Convert.ToString(result) + msgError);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Handle exception
+                return false;
+            }
         }
 
         public List<ProductVariantModel> GetAllProductVariant()
@@ -43,8 +76,22 @@ namespace DAL
                 if (!string.IsNullOrEmpty(msgError))
                     throw new Exception(msgError);
                 var sanPham = dt.ConvertTo<ProductVariantModel>().FirstOrDefault();
-
-
+                return sanPham;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public List<ProductVariantModel> GetProductVariantIdProduct(int ProductID)
+        {
+            string msgError = "";
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable("SearchProductNameByProductVariant", "@ProductName", ProductID);
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                var sanPham = dt.ConvertTo<ProductVariantModel>().ToList();
                 return sanPham;
             }
             catch (Exception ex)
@@ -53,19 +100,28 @@ namespace DAL
             }
         }
 
-        public bool GetProductVariantIdProduct(int ProductID)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<ProductVariantModel> SearchProductVariant(string VariantName)
         {
-            throw new NotImplementedException();
+            string msgError = "";
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable("SearchProductVariant", "@Value", VariantName);
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                var sanPham = dt.ConvertTo<ProductVariantModel>().ToList();
+                return sanPham;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public bool UpdateProductVariant(ProductVariantModel model)
         {
             throw new NotImplementedException();
         }
+
+       
     }
 }

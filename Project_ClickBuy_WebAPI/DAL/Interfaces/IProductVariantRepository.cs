@@ -10,10 +10,10 @@ namespace DAL
     public interface IProductVariantRepository
     {
         List <ProductVariantModel> GetAllProductVariant();
-        bool AddProductVariant(ProductVariantModel model);
+       bool AddProductVariant(int productID, List<ProductVariantModel> variants);
         bool UpdateProductVariant(ProductVariantModel model);
         bool DeteteProductVariant(int VariantID);
-        bool GetProductVariantIdProduct(int ProductID);
+        List<ProductVariantModel> GetProductVariantIdProduct(int ProductID);
 
         List<ProductVariantModel> SearchProductVariant(string VariantName);
         ProductVariantModel GetIDProductVariant(int productVariantID);

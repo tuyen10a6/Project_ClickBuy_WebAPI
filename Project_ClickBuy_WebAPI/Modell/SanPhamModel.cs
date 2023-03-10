@@ -15,6 +15,7 @@ namespace Model
         public DateTime DateCreated { get; set; }
         public int BrandID { get; set; }
         public int CategoryID { get; set; }
+        public int? PRICE { get; set; }
         public List<ProductVariants> Variants { get; set; } = new List<ProductVariants>();
         public List<Specification> Attributes { get; set; } = new List<Specification>();
     }
