@@ -12,6 +12,8 @@ builder.Services.AddTransient<IProductVariantRepository, ProductVariantRepositor
 builder.Services.AddScoped<IProductVariantBusiness, ProductVariantBus>();
 builder.Services.AddTransient<ICategoriesRepository, CategoriesRespository>();
 builder.Services.AddScoped<ICategoriesBusiness, CategoriesBus>();
+builder.Services.AddTransient<IBrandRepository, BrandRespository>();
+builder.Services.AddScoped<IBrandBusiness, BrandBus>();
 
 // Add services to the container.
 builder.Services.AddControllers();
