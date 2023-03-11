@@ -175,7 +175,9 @@ namespace DAL
 
         public List<SanPhamModel> GetSanPhamByPage(int pageNumber, int pageSize)
         {
-            throw new NotImplementedException();
+            var dt = _dbHelper.ExecuteSProcedureReturnDataTable("GetProductsPaged", "@PageSize", pageSize, "@PageNumber", pageNumber);
+            var sanPhams = dt.ConvertTo<SanPhamModel>().ToList();
+            return sanPhams;
         }
     }
 }

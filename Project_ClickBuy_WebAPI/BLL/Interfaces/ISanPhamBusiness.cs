@@ -18,6 +18,6 @@ namespace BLL.Interfaces
         List<SanPhamModel> GetMeMory(int value);
         List<SanPhamModel> GetProductsByPriceRange(int min, int max);
         List<SanPhamModel> GetProductMeMoRy(int Value);
-
+        List<SanPhamModel> GetSanPhamByPage(int pageNumber, int pageSize);
     }
 }

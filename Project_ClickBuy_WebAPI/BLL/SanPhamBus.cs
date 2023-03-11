@@ -52,5 +52,10 @@ namespace BLL
         {
             throw new NotImplementedException();
         }
+
+        public List<SanPhamModel> GetSanPhamByPage(int pageNumber, int pageSize)
+        {
+           return _res.GetSanPhamByPage(pageNumber, pageSize);
+        }
     }
 }

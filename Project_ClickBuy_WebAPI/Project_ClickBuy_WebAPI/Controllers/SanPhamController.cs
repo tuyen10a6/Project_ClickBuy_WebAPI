@@ -86,6 +86,20 @@ namespace Project_ClickBuy_WebAPI.Controllers
             var result = _sanphamBusiness.GetProductsByPriceRange(min, max);
             return Ok(result);
         }
+        [Route("api/products/{pagesize}/{pagenumber}")]
+        [HttpGet]
+        public IActionResult GetProducts(int pagesize, int pagenumber)
+        {
+            var products = _sanphamBusiness.GetSanPhamByPage(pagenumber, pagesize);
+
+            if (products == null || products.Count == 0)
+            {
+                return NotFound();
+            }
+
+            return Ok(products);
+        }
+
 
     }
 }
