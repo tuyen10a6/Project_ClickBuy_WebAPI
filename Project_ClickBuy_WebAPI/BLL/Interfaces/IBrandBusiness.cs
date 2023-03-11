@@ -13,5 +13,12 @@ namespace BLL.Interfaces
         bool CreateBrand(BrandModel model);
         bool UpdateBrand(BrandModel model);
         bool DeleteBrand(int BrandID);
+        List<SanPhamModel> GetSanPhamByBrandID(int BrandID);
+        List<SanPhamModel> GetProductPrice(int BrandID, int min, int max);
+        List<SanPhamModel> GetProductMeMory(int BrandID, int Memory);
+        List<SanPhamModel> GetProductASC(int BrandID);
+        List<SanPhamModel> GetProductDesc(int BrandID);
+        List<BrandModel> SearchBrand(string BrandName);
+
     }
 }

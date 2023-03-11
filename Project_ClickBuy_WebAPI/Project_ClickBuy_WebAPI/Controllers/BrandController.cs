@@ -42,5 +42,50 @@ namespace Project_ClickBuy_WebAPI.Controllers
             var result = _sanphamBusiness.DeleteBrand(id);
             return Ok("Xóa thành công");
         }
+        [Route("GetASCProductBrand/{BrandID}")]
+        [HttpGet]
+        public List<SanPhamModel> GetProductASCBrand(int BrandID)
+        {
+            var result = _sanphamBusiness.GetProductASC(BrandID);
+            return result;
+            
+        }
+        [Route("GetDESCProductBrand/{BrandID}")]
+        [HttpGet]
+        public List<SanPhamModel> GetProductDESCBrand(int BrandID)
+        {
+            var result = _sanphamBusiness.GetProductDesc(BrandID);
+            return result;
+
+        }
+        [Route("GetAllProductBrand/{BrandID}")]
+        [HttpGet]
+        public List<SanPhamModel> GetAllProductBrand(int BrandID)
+        {
+            var result = _sanphamBusiness.GetSanPhamByBrandID(BrandID);
+            return result;
+        }
+        [Route("GetAllProductBrand/{BrandID}_bonhotrong/{memory}")]
+        [HttpGet]
+        public List<SanPhamModel> GetAllProductBrandByMeMoRy(int BrandID, int memory)
+        {
+            var result = _sanphamBusiness.GetProductMeMory(BrandID , memory);
+            return result;
+        }
+        [Route("GetProductBrand/{BrandID}_MinPrice/{min}_MaxPrice/{max}")]
+        [HttpGet]
+        public List<SanPhamModel> GetProductMinAndMaxBrand (int BrandID , int min , int max)
+        {
+            var result = _sanphamBusiness.GetProductPrice(BrandID, min, max);
+            return result;
+        }
+        [Route("GetProductBrand/{BrandName}")]
+        [HttpGet]
+        public List<BrandModel> SearchBrand(string BrandName)
+        {
+            var result = _sanphamBusiness.SearchBrand(BrandName);
+            return result;
+        }
+
     }
 }
