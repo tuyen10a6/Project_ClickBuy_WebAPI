@@ -77,7 +77,8 @@ namespace DAL
 
         public List<SanPhamModel> GetProductDesc(int CategoryID)
         {
-            var dt = _dbHelper.ExecuteSProcedureReturnDataTable("GetProductsByDESCPriceByCategoryID", "@CategoryID", CategoryID);
+            var dt = _dbHelper.ExecuteSProcedureReturnDataTable("GetProductsByDESCPriceByCategoryID",
+            "@CategoryID", CategoryID);
 
             // Chuyển đổi kết quả trả về sang danh sách các đối tượng SanPhamModel
             var sanPhams = dt.ConvertTo<SanPhamModel>().ToList();
@@ -116,6 +117,28 @@ namespace DAL
                 throw ex;
             }
         }
+
+        public List<SanPhamModel> PagingByCategory(int CategoryID, int PageSize, int PageNumber)
+        {
+            string msgError = "";
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable("GetProductsByCategoryPaged", 
+                    "@CategoryID", CategoryID,
+                    "@PageSize", PageSize,
+                    "@PageNumber", PageNumber
+                    );
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                var sanPham = dt.ConvertTo<SanPhamModel>().ToList();
+                return sanPham;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public bool UpdateSanPham(CategoriesModel model)
         {
             var requestJson = model != null ? MessageConvert.SerializeObject(model) : null;

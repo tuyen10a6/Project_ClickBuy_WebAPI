@@ -76,7 +76,14 @@ namespace Project_ClickBuy_WebAPI.Controllers
             var result = _sanphamBusiness.GetProductDesc(CategoryID);
             return Ok(result);
         }
-        
-        
+        [Route("api/productsbyCategory/{CategoryID}/{pagesize}/{pagenumber}")]
+        [HttpGet]
+        public IActionResult GetProductByCategory(int CategoryID , int pagesize, int pagenumber)
+        {
+            var result = _sanphamBusiness.PagingByCategory(CategoryID, pagesize, pagenumber);
+            return Ok(result);
+        }
+
+
     }
 }

@@ -55,6 +55,11 @@ namespace BLL
             return _res.GetSanPhamByCategoryID(CategoryID);
         }
 
+        public List<SanPhamModel> PagingByCategory(int CategoryID, int PageSize, int PageNumber)
+        {
+            return _res.PagingByCategory(CategoryID, PageSize, PageNumber);
+        }
+
         public bool UpdateCategories(CategoriesModel model)
         {
             return _res.UpdateSanPham(model);

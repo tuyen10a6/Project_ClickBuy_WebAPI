@@ -94,6 +94,27 @@ namespace DAL
             return sanPhams;
         }
 
+        public List<SanPhamModel> GetProductPaging(int BrandID, int PageSize, int PageNumber)
+        {
+            string msgError = "";
+            try
+            {
+                var dt = _databaseHelper.ExecuteSProcedureReturnDataTable("GetProductsByBrandPaged",
+                    "@BrandID", BrandID,
+                    "@PageSize", PageSize,
+                    "@PageNumber", PageNumber
+                    );
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                var sanPham = dt.ConvertTo<SanPhamModel>().ToList();
+                return sanPham;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public List<SanPhamModel> GetProductPrice(int BrandID, int min, int max)
         {
             var dt = _databaseHelper.ExecuteSProcedureReturnDataTable("GetProductsByPriceRangeBrandID", "@BrandID", BrandID, "@MinPrice", min, "@MaxPrice", max);

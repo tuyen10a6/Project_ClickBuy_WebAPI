@@ -18,6 +18,8 @@ namespace BLL.Interfaces
         List<SanPhamModel> GetProductMeMoRy(int CategoryID, int MeMoRy);
         List<SanPhamModel> GetProductASC(int CategoryID);
         List<SanPhamModel> GetProductDesc(int CategoryID);
+        List<SanPhamModel> PagingByCategory(int CategoryID, int PageSize, int PageNumber);
+
 
     }
 }

@@ -85,6 +85,13 @@ namespace Project_ClickBuy_WebAPI.Controllers
             var result = _sanphamBusiness.SearchBrand(BrandName);
             return result;
         }
+        [Route("GetProductByBrand/{BrandID}/{PageSize}/{PageNumber}")]
+        [HttpGet]
+        public List<SanPhamModel> GetProductByBrandPage(int BrandID, int PageSize, int PageNumber)
+        {
+            var result = _sanphamBusiness.GetProductByPageBrand(BrandID, PageSize, PageNumber);
+            return result;
+        }    
 
     }
 }

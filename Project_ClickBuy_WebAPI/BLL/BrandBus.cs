@@ -37,6 +37,11 @@ namespace BLL
             return _res.GetProductASC(BrandID);
         }
 
+        public List<SanPhamModel> GetProductByPageBrand(int BrandID, int PageSize, int PageNumber)
+        {
+            return _res.GetProductPaging(BrandID, PageSize, PageNumber);    
+        }
+
         public List<SanPhamModel> GetProductDesc(int BrandID)
         {
             return _res.GetProductDesc(BrandID);

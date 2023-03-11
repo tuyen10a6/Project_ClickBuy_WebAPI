@@ -19,6 +19,7 @@ namespace BLL.Interfaces
         List<SanPhamModel> GetProductASC(int BrandID);
         List<SanPhamModel> GetProductDesc(int BrandID);
         List<BrandModel> SearchBrand(string BrandName);
+        List<SanPhamModel> GetProductByPageBrand(int BrandID, int PageSize, int PageNumber);
 
     }
 }

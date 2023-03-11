@@ -20,6 +20,7 @@ namespace DAL.Interfaces
         List<SanPhamModel> GetProductMeMory(int CategoryID, int Memory);
         List<SanPhamModel> GetProductASC(int CategoryID);
         List<SanPhamModel> GetProductDesc(int CategoryID);  
+        List<SanPhamModel> PagingByCategory(int CategoryID , int PageSize , int PageNumber);
         
     }
 }
