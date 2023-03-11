@@ -31,7 +31,6 @@ namespace Project_ClickBuy_WebAPI.Controllers
         [HttpPost]
         public IActionResult UpdateBrand(BrandModel brand)
         {
-            
             var result = _sanphamBusiness.UpdateBrand(brand);
             return Ok("Sửa thành công");
         }

@@ -172,5 +172,10 @@ namespace DAL
             var sanPhams = dt.ConvertTo<SanPhamModel>().ToList();
             return sanPhams;
         }
+
+        public List<SanPhamModel> GetSanPhamByPage(int pageNumber, int pageSize)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
