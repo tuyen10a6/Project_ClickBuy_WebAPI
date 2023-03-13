@@ -20,6 +20,7 @@ namespace DAL.Interfaces
         List<SanPhamModel> GetProductASC(int BrandID);
         List<SanPhamModel> GetProductDesc(int BrandID);
         List<BrandModel> SearchBrandName(string BrandName);
+     
 
     }
 }

@@ -1,0 +1,160 @@
+.Apple_Full {
+    max-width: 1170px;
+    margin: 0px auto;
+
+
+    .ex_hotlink {
+
+
+        padding: 8px 5px;
+        overflow: hidden;
+        display: block;
+        width: 100%;
+
+        h2 {
+            float: left;
+            margin-top: 3px;
+            margin-bottom: 0px;
+            font-size: 16px;
+            color: #fff;
+            text-transform: uppercase;
+            /* background: #1e1e1e; */
+            border-radius: 12px;
+            min-width: 230px;
+            height: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 15px;
+            background-color: black;
+            font-weight: bold;
+        }
+
+        .ex_menuscoll {
+            width: 45%;
+            float: right;
+
+            .ex_dmc {
+                width: 100%;
+                overflow-y: hidden;
+
+                min-height: 0.01%;
+                overflow-x: auto;
+                margin-bottom: 7px;
+
+                .ex_collapse {
+                    .FullItemApple {
+                        display: flex;
+                        flex-wrap: nowrap;
+                        overflow-x: scroll;
+                        width: 100%;
+
+
+                        .Item_Apple {
+                            flex: 0 0 auto;
+                            margin-bottom: 10px;
+                            margin-right: 20px;
+                            list-style: none;
+                            border: 1px solid #ccc;
+                            padding: 2px;
+                            border-radius: 6px;
+
+                            background-color: rgb(235, 227, 227);
+                        }
+
+                        /* Tùy chỉnh thanh cuộn */
+                        &::-webkit-scrollbar {
+                            width: 5px;
+                            height: 5px;
+                        }
+
+                        &::-webkit-scrollbar-thumb {
+                            background-color: #ccc;
+                        }
+
+                        &::-webkit-scrollbar-track {
+                            background-color: transparent;
+                        }
+
+                        &::-webkit-scrollbar-button {
+                            display: none;
+                        }
+
+                        &::-webkit-scrollbar-corner {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+
+        }
+    }
+
+    .Product_FullItemHome {
+        display: flex;
+        flex-wrap: wrap;
+
+        .Item_ProductHome {
+            width: 18%;
+
+            border-radius: 12px;
+            text-align: center;
+            margin: 10px 5px;
+            margin-right: 18.3px;
+            padding: 10px;
+            background: rgb(242, 238, 238);
+            box-shadow: rgb(60 64 67 / 10%) 0px 1px 2px 0px, rgb(60 64 67 / 15%) 0px 2px 6px 2px;
+
+            .Link_Item {
+                width: 100% !important;
+                text-decoration: none;
+                color: black;
+
+
+                img {
+                    width: 160px;
+                    height: 160px;
+                    border-radius: 10px;
+                }
+
+                h3 {
+                    width: 100%;
+                    color: #4d4d4d;
+                    font-weight: 600;
+                    font-size: 13px;
+                    text-decoration: none;
+                    line-height: 1.4;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    padding: 0px 0px 5px 0px;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    min-height: 50px;
+                    height: auto;
+                    margin-bottom: 0px;
+                    margin-top: 10px;
+                }
+
+                .Money_Aplle {
+                    display: flex;
+                    justify-content: space-between;
+
+                    p {
+                        font-size: 16px;
+                        color: rgb(222, 84, 84);
+                        font-weight: bold;
+                    }
+
+                    del {
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+}

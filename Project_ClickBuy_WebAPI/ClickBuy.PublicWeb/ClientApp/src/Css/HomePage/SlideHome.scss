@@ -1,0 +1,42 @@
+.swiper-slide {
+
+    margin: 0px;
+    border-radius: 10px;
+
+
+    img {
+        width: 658px;
+        height: 400px;
+        margin: 0 auto;
+        border-radius: 10px;
+
+    }
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(226, 102, 102);
+    background-color: rgb(203, 196, 196);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50.0000%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: 38px;
+    /* Giữa nội dung theo chiều dọc của nền */
+}
+
+.swiper-button-prev::after {
+    content: "<";
+}
+
+.swiper-button-next::after {
+    content: ">";
+}

@@ -11,4 +11,12 @@ namespace Model
         public int CategoryID { get; set; } 
         public string CategoryName { get; set; }
     }
+    public class GetAllBrandByCategoryModel
+    {
+        public int CategoryID { get; set; }
+        public string CategoryName { get; set; }
+        public string BrandName { get; set; }
+    }
+    
+
 }

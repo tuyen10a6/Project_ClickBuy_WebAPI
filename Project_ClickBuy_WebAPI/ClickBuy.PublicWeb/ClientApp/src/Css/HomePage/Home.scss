@@ -1,0 +1,480 @@
+.Home_Page {
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    .Header {
+        background: #dd0000;
+
+        .Header_Home {
+            display: flex;
+            align-items: center;
+
+            height: 80px;
+            max-width: 1170px;
+            margin: 0px auto;
+
+
+            .Logo_Home {
+                .Image_Logo {
+                    display: block;
+                    height: auto;
+                    padding: 5px 0px;
+                    max-width: 245px;
+                }
+            }
+
+            .Input_search__Home {
+                padding: 0px 10px;
+
+                .Text_Input_search__HomePage {
+                    width: 300px;
+                    height: 40px;
+                    border: none;
+                    border-radius: 8px;
+                    font-size: 14px;
+                    padding: 0px 10px;
+
+                }
+
+                .icon_click_search {
+                    position: relative;
+
+                    svg {
+                        position: absolute;
+                        top: -30px;
+                        right: 10px;
+                        color: rgb(246, 114, 114);
+                        font-size: 20px;
+                    }
+
+                }
+            }
+
+            .Location_Header {
+                display: flex;
+                align-items: center;
+                line-height: 2;
+
+                .dropdown {
+                    margin-left: 10px;
+                    border-radius: 10px;
+
+                    #dropdown-item-button {
+                        background-color: #ff5050;
+                        color: rgb(237, 237, 102);
+                        border: none;
+                        border-radius: 5px;
+                        height: 50px;
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            .Contact_phone_Click {
+                margin-left: 42px;
+                font-size: 13px;
+
+                a {
+                    color: white;
+                    text-decoration: none;
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+                    font-size: 14px;
+
+                    &:hover {
+                        background: #ff5050;
+                        border-radius: 4px;
+                        padding: 4px;
+                    }
+
+
+                    .Icon_Phone_Header {
+                        border: 1px solid #ccc;
+                        padding: 2px 6px;
+                        border-radius: 4px;
+                        margin-right: 10px;
+                    }
+
+                    .Contact_phone {
+                        font-size: 12px;
+
+                        p {
+                            font-size: 13px;
+                        }
+                    }
+
+                    p {
+                        margin: 0px;
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            .Cart_Header {
+                margin-left: 42px;
+
+                a {
+                    color: white;
+                    text-decoration: none;
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+
+                    &:hover {
+                        background: #ff5050;
+                        border-radius: 4px;
+                        padding: 4px;
+                    }
+
+                    .Icon_Phone_Header {
+                        border: 1px solid #ccc;
+                        padding: 2px 6px;
+                        border-radius: 4px;
+                        margin-right: 10px;
+                    }
+
+                    p {
+                        margin: 0px;
+                        font-size: 13px;
+                    }
+                }
+            }
+
+            .Warranty_Policy {
+                margin-left: 42px;
+
+                a {
+                    color: white;
+                    text-decoration: none;
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+
+                    &:hover {
+                        background: #ff5050;
+                        border-radius: 4px;
+                        padding: 4px;
+                    }
+
+                    .Icon_Phone_Header {
+                        border: 1px solid #ccc;
+                        padding: 2px 6px;
+                        border-radius: 4px;
+                        margin-right: 10px;
+                    }
+
+                    p {
+                        margin: 0px;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+
+    .Slide_Home {
+
+        margin: 0px auto;
+        position: relative;
+        width: 100%;
+        display: block;
+
+        .Slide_Home_Content {
+            max-width: 1170px;
+            margin: 0px auto;
+        }
+
+        .Background_SlideTop:before {
+
+            position: absolute;
+            content: '';
+            top: -1rem;
+            left: 45%;
+            width: 110%;
+            height: 125px;
+            border-radius: 0 0 50% 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(115deg, #dd0000 0%, #dd0000 100%) #dd0000;
+        }
+
+        .containner_Slide {
+
+            width: 1170px;
+            margin: 0px auto;
+
+            .cb_tip {
+                margin-top: 15px;
+                background-color: #ffffffe3;
+                width: 100%;
+                height: 48px;
+                border-radius: 8.5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+            }
+
+            .Row {
+                margin-top: 14px;
+                display: flex;
+
+                .cb_slider {
+                    display: flex;
+
+                    .cb_menu_container {
+                        width: 25%;
+                        margin-right: 15px;
+                        min-height: 480px;
+                        background: #ecdbdb;
+                        position: relative;
+                        border-radius: 10px;
+
+
+                        .FullMenu_container_Slide {
+                            padding: 0px;
+
+
+                            .ItemMenu_container_Slide {
+                                list-style: none;
+                                padding: 2px;
+
+                                &:hover {
+                                    background-color: rgb(214, 208, 208);
+                                    border-radius: 5px;
+                                }
+
+
+                                .mega-custom-icon {
+                                    width: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    text-decoration: none !important;
+                                    color: #333;
+                                    font-size: 14.3px;
+                                    padding: 5px;
+                                }
+
+                                .mega-custom-icons {
+                                    width: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    text-decoration: none !important;
+                                    color: #333;
+                                    font-size: 16px;
+                                    padding: 5px;
+                                }
+
+                                .mega-custom-icon::after {
+                                    content: ">";
+                                    display: inline-block;
+                                    margin-left: 10px;
+                                    color: red;
+                                    position: absolute;
+                                    right: 5px;
+                                }
+
+                                #mega-menu-iconlink-one:before {
+                                    content: "";
+                                    background-image: url(//clickbuy.com.vn/uploads/2022/07/icon-phone-red.svg);
+                                    background-size: 24px 24px;
+                                    background-repeat: no-repeat;
+                                    min-width: 35px;
+                                    height: 28px;
+                                    line-height: 24px;
+                                    vertical-align: middle;
+                                    margin-right: 7px;
+
+                                }
+
+                                #mega-menu-iconlink-two:before {
+                                    content: "";
+                                    background-image: url(//clickbuy.com.vn/uploads/2022/07/icon-phone-red.svg);
+                                    background-size: 24px 24px;
+                                    background-repeat: no-repeat;
+                                    min-width: 35px;
+                                    height: 28px;
+                                    line-height: 24px;
+                                    vertical-align: middle;
+                                    margin-right: 7px;
+
+                                }
+
+                                #mega-menu-iconlink-three:before {
+                                    content: "";
+                                    background-image: url(//clickbuy.com.vn/uploads/2022/07/icon-samsung-red.svg);
+                                    background-size: 24px 24px;
+                                    background-repeat: no-repeat;
+                                    min-width: 35px;
+                                    height: 28px;
+                                    line-height: 24px;
+                                    vertical-align: middle;
+                                    margin-right: 7px;
+
+                                }
+
+                                #mega-menu-iconlink-four:before {
+                                    content: "";
+                                    background-image: url(//clickbuy.com.vn/uploads/2022/07/icon-tablet-red.svg);
+                                    background-size: 24px 24px;
+                                    background-repeat: no-repeat;
+                                    min-width: 35px;
+                                    height: 28px;
+                                    line-height: 24px;
+                                    vertical-align: middle;
+                                    margin-right: 7px;
+
+                                }
+
+                                #mega-menu-iconlink-five:before {
+                                    content: "";
+                                    background-image: url(//clickbuy.com.vn/uploads/2022/07/icon-laptop-red_1.svg);
+                                    background-size: 24px 24px;
+                                    background-repeat: no-repeat;
+                                    min-width: 35px;
+                                    height: 28px;
+                                    line-height: 24px;
+                                    vertical-align: middle;
+                                    margin-right: 7px;
+
+                                }
+
+                                #mega-menu-iconlink-six:before {
+                                    content: "";
+                                    background-image: url(//clickbuy.com.vn/uploads/2022/07/icon-watch-red_1.svg);
+
+                                    background-size: 24px 24px;
+                                    background-repeat: no-repeat;
+                                    min-width: 35px;
+                                    height: 28px;
+                                    line-height: 24px;
+                                    vertical-align: middle;
+                                    margin-right: 7px;
+
+                                }
+
+                                #mega-menu-iconlink-seven:before {
+                                    content: "";
+                                    background-image: url(//clickbuy.com.vn/uploads/2022/07/icon-hangcu-red.svg);
+                                    background-size: 24px 24px;
+                                    background-repeat: no-repeat;
+                                    min-width: 35px;
+                                    height: 28px;
+                                    line-height: 24px;
+                                    vertical-align: middle;
+                                    margin-right: 7px;
+
+                                }
+
+                                #mega-menu-iconlink-eight:before {
+                                    content: "";
+                                    background-image: url(//clickbuy.com.vn/uploads/2022/07/icon-thucu-red.svg);
+                                    background-size: 24px 24px;
+                                    background-repeat: no-repeat;
+                                    min-width: 35px;
+                                    height: 28px;
+                                    line-height: 24px;
+                                    vertical-align: middle;
+                                    margin-right: 7px;
+
+                                }
+
+                                #mega-menu-iconlink-nine:before {
+                                    content: "";
+                                    background-image: url(//clickbuy.com.vn/uploads/2022/07/icon-airpod-red.svg);
+                                    background-size: 24px 24px;
+                                    background-repeat: no-repeat;
+                                    min-width: 35px;
+                                    height: 28px;
+                                    line-height: 24px;
+                                    vertical-align: middle;
+                                    margin-right: 7px;
+
+                                }
+
+                                #mega-menu-iconlink-ten:before {
+                                    content: "";
+                                    background-image: url(//clickbuy.com.vn/uploads/2022/07/icon-repair-phone-red.svg);
+                                    background-size: 24px 24px;
+                                    background-repeat: no-repeat;
+                                    min-width: 35px;
+                                    height: 28px;
+                                    line-height: 24px;
+                                    vertical-align: middle;
+                                    margin-right: 7px;
+
+                                }
+
+                                #mega-menu-iconlink-eleven:before {
+                                    content: "";
+                                    background-image: url(//clickbuy.com.vn/uploads/2022/07/icon-news-red.svg);
+                                    background-size: 24px 24px;
+                                    background-repeat: no-repeat;
+                                    min-width: 35px;
+                                    height: 28px;
+                                    line-height: 24px;
+                                    vertical-align: middle;
+                                    margin-right: 7px;
+
+                                }
+
+                                #mega-menu-iconlink-twelve:before {}
+
+                                .mega-custom-icon {
+                                    position: relative;
+
+                                    .mega-indicator {
+                                        position: absolute;
+                                        margin-left: 77px;
+
+                                    }
+                                }
+
+                            }
+                        }
+
+
+
+
+                    }
+
+                    .cb_slider_container {
+                        width: 75%;
+                    }
+                }
+
+                .cb_banner_container {
+                    width: 25%;
+                    background: #ecdbdb;
+                    z-index: 10;
+                    border-radius: 10px;
+                    margin-left: 20px;
+
+                    .Title_banner_container {
+                        color: red;
+                        text-align: center;
+                        padding-top: 6px;
+                    }
+
+                    .image_cb_banner_container {
+                        // display: flex;
+                        // flex-direction: column;
+                        text-align: center;
+
+                        img {
+                            width: 250px;
+                            text-align: center;
+                            margin: 8px 0px;
+                            border-radius: 6px;
+                            height: 145px;
+                        }
+                    }
+                }
+
+
+
+            }
+        }
+    }
+
+}

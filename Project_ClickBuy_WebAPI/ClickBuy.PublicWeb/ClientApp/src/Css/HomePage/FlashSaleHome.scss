@@ -1,0 +1,27 @@
+.Flash_SaleHome {
+
+    max-width: 1170px;
+    margin: 15px auto;
+    padding: 0px 14px;
+    background: linear-gradient(to right, #93291e, #ed213a);
+    height: 412px;
+    border-radius: 12px;
+
+    .Flash_SaleHome_Top {
+        display: flex;
+        padding: 10px 0;
+        margin-bottom: 12px;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        .Flash_SaleHome_CountDownTime {
+            position: absolute;
+            width: 195px;
+            margin: 0 auto;
+            right: 10px;
+        }
+    }
+
+
+}

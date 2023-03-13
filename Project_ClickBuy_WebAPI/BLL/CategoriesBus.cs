@@ -26,6 +26,12 @@ namespace BLL
         {
             return _res.DeleteCategory(CategoryID);
         }
+
+        public List<GetAllBrandByCategoryModel> GetAllBrandByCategoryID(int CategoryID)
+        {
+           return _res.getAllBrandByCategoryModels(CategoryID);
+        }
+
         public List<CategoriesModel> GetAllCate()
         {
             return _res.GetAllCate();

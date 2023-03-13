@@ -58,6 +58,15 @@ namespace DAL
                 return false;
             }
         }
+        public List<GetAllBrandByCategoryModel> getAllBrandByCategoryModels(int CategoryID)
+        {
+            var dt = _dbHelper.ExecuteSProcedureReturnDataTable("GetAllBrandByCategoryID", "@CATEGORYID", CategoryID);
+
+            // Chuyển đổi kết quả trả về sang danh sách các đối tượng SanPhamModel
+            var sanPhams = dt.ConvertTo<GetAllBrandByCategoryModel>().ToList();
+            return sanPhams;
+        }
+
         public List<CategoriesModel> GetAllCate()
         {
             string spName = "GetAllDanhMuc";

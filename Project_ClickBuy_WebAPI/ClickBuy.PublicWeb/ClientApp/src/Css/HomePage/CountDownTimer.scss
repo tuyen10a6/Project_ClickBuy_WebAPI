@@ -1,0 +1,82 @@
+// .countdown-timer {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+
+//     .timer-block {
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: center;
+//         margin: 0 12px;
+
+//         .timer-value {
+//             font-size: 1.5rem;
+//             font: normal 1.48em/29px "Lato";
+//             font-weight: 700;
+//             color: rgb(218, 80, 80);
+//             background-color: white;
+//             border-radius: 6px;
+//             padding: 0px 4px;
+
+//         }
+
+//         .timer-label {
+//             font-size: 0.72rem;
+//             color: white;
+//             text-transform: uppercase;
+//         }
+//     }
+// }
+
+
+
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .timer-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 12px;
+
+        .timer-value {
+            font-size: 1.5rem;
+            font: normal 1.48em/29px "Lato";
+            font-weight: 700;
+            color: rgb(218, 80, 80);
+            background-color: white;
+            border-radius: 6px;
+            padding: 0px 4px;
+            animation-name: countdown;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+
+        }
+
+        .timer-label {
+            font-size: 0.72rem;
+            color: white;
+            text-transform: uppercase;
+        }
+    }
+}
+
+@keyframes countdown {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

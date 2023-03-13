@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project_ClickBuy_WebAPI", "Project_ClickBuy_WebAPI\Project_ClickBuy_WebAPI.csproj", "{B2ED4289-06EE-4ECC-B0E5-75FD2602A4D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClickBuy.AdminApi", "Project_ClickBuy_WebAPI\ClickBuy.AdminApi.csproj", "{B2ED4289-06EE-4ECC-B0E5-75FD2602A4D5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{C9DB183A-575C-4B8A-91FE-DAE70990FD23}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLL", "BLL\BLL.csproj", "{8033A317-4273-4B8F-B43A-C9E1A6D12AAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Modell\Model.csproj", "{53CC94F3-FCE8-46A5-A782-4A75569E8F0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Modell\Model.csproj", "{53CC94F3-FCE8-46A5-A782-4A75569E8F0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClickBuy.PublicApi", "ClickBuy.PublicApi\ClickBuy.PublicApi.csproj", "{8A1D7215-0F1E-4A9B-B201-092CBC502C32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClickBuy.PublicWeb", "ClickBuy.PublicWeb\ClickBuy.PublicWeb.csproj", "{AE2D8A65-0CEF-4FB6-BCFF-C33059DF2887}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{53CC94F3-FCE8-46A5-A782-4A75569E8F0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53CC94F3-FCE8-46A5-A782-4A75569E8F0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53CC94F3-FCE8-46A5-A782-4A75569E8F0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A1D7215-0F1E-4A9B-B201-092CBC502C32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A1D7215-0F1E-4A9B-B201-092CBC502C32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A1D7215-0F1E-4A9B-B201-092CBC502C32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A1D7215-0F1E-4A9B-B201-092CBC502C32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE2D8A65-0CEF-4FB6-BCFF-C33059DF2887}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE2D8A65-0CEF-4FB6-BCFF-C33059DF2887}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE2D8A65-0CEF-4FB6-BCFF-C33059DF2887}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE2D8A65-0CEF-4FB6-BCFF-C33059DF2887}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

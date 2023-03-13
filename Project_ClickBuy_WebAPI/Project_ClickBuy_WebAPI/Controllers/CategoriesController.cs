@@ -5,7 +5,7 @@ using Model;
 
 namespace Project_ClickBuy_WebAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("apiUser/[controller]")]
     [ApiController]
     public class CategoriesController : ControllerBase
     {
@@ -82,6 +82,13 @@ namespace Project_ClickBuy_WebAPI.Controllers
         {
             var result = _sanphamBusiness.PagingByCategory(CategoryID, pagesize, pagenumber);
             return Ok(result);
+        }
+        [Route("GetAllBrandByCategory/{CategoryID}")]
+        [HttpGet]
+        public List<GetAllBrandByCategoryModel> GetAllBrandByCategory(int CategoryID)
+        {
+            var result = _sanphamBusiness.GetAllBrandByCategoryID(CategoryID);
+            return result;
         }
 
 
