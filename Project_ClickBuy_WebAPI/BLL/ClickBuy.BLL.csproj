@@ -15,8 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DAL\DAL.csproj" />
-    <ProjectReference Include="..\Modell\Model.csproj" />
+    <ProjectReference Include="..\DAL\ClickBuy.DAL.csproj" />
+    <ProjectReference Include="..\Modell\ClickBuy.Model.csproj" />
   </ItemGroup>
 
 </Project>

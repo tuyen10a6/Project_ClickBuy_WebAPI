@@ -16,9 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj" />
-    <ProjectReference Include="..\DAL\DAL.csproj" />
-    <ProjectReference Include="..\Modell\Model.csproj" />
+    <ProjectReference Include="..\BLL\ClickBuy.BLL.csproj" />
+    <ProjectReference Include="..\DAL\ClickBuy.DAL.csproj" />
+    <ProjectReference Include="..\Modell\ClickBuy.Model.csproj" />
   </ItemGroup>
 
 </Project>

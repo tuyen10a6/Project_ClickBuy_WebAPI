@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Modell\Model.csproj" />
+    <ProjectReference Include="..\Modell\ClickBuy.Model.csproj" />
   </ItemGroup>
 
 </Project>
