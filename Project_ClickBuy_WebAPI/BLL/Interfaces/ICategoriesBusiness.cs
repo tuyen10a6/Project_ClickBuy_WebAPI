@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using ClickBuy.Model.ViewModel;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,16 +10,16 @@ namespace BLL.Interfaces
 {
     public interface ICategoriesBusiness
     {
-        List<CategoriesModel> GetAllCate();
+        List<CategoryUserModel> GetAllCateUser();
         bool CreateCategories (CategoriesModel model);
         bool UpdateCategories(CategoriesModel model);
         bool DeleteCategory(int CategoryID);
-        List<SanPhamModel> GetSanPhamByCategoryID(int CategoryID);
-        List<SanPhamModel> GetProductPrice(int CategoryID, int min, int max);
-        List<SanPhamModel> GetProductMeMoRy(int CategoryID, int MeMoRy);
-        List<SanPhamModel> GetProductASC(int CategoryID);
-        List<SanPhamModel> GetProductDesc(int CategoryID);
-        List<SanPhamModel> PagingByCategory(int CategoryID, int PageSize, int PageNumber);
+        List<ProductUserModel> GetSanPhamByCategoryID(int CategoryID);
+        List<ProductUserModel> GetProductPrice(int CategoryID, int min, int max);
+        List<ProductUserModel> GetProductMeMoRy(int CategoryID, int MeMoRy);
+        List<ProductUserModel> GetProductASC(int CategoryID);
+        List<ProductUserModel> GetProductDesc(int CategoryID);
+        List<ProductUserModel> PagingByCategory(int CategoryID, int PageSize, int PageNumber);
         List<GetAllBrandByCategoryModel> GetAllBrandByCategoryID(int CategoryID);
 
     }

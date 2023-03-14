@@ -1,4 +1,5 @@
 ﻿using BLL.Interfaces;
+using ClickBuy.Model.ViewModel;
 using DAL.Interfaces;
 using Model;
 using System;
@@ -27,7 +28,7 @@ namespace BLL
             return _res.DeleteBrand(BrandID);
         }
 
-        public List<BrandModel> GetAllBrand()
+        public List<BrandUserModel> GetAllBrandz()
         {
             return _res.GetAllBrand();
         }

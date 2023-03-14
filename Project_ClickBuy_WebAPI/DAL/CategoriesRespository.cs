@@ -1,4 +1,5 @@
-﻿using DAL.Helper;
+﻿using ClickBuy.Model.ViewModel;
+using DAL.Helper;
 using DAL.Interfaces;
 using Model;
 using System;
@@ -62,55 +63,55 @@ namespace DAL
         {
             var dt = _dbHelper.ExecuteSProcedureReturnDataTable("GetAllBrandByCategoryID", "@CATEGORYID", CategoryID);
 
-            // Chuyển đổi kết quả trả về sang danh sách các đối tượng SanPhamModel
+            // Chuyển đổi kết quả trả về sang danh sách các đối tượng ProductUserModel
             var sanPhams = dt.ConvertTo<GetAllBrandByCategoryModel>().ToList();
             return sanPhams;
         }
 
-        public List<CategoriesModel> GetAllCate()
+        public List<CategoryUserModel> GetAllCate()
         {
             string spName = "GetAllDanhMuc";
             var dt = _dbHelper.ExecuteSProcedureReturnDataTable(spName);
-            var listSanPham = dt.ConvertTo<CategoriesModel>().ToList();
+            var listSanPham = dt.ConvertTo<CategoryUserModel>().ToList();
             return listSanPham;
         }
 
-        public List<SanPhamModel> GetProductASC(int CategoryID)
+        public List<ProductUserModel> GetProductASC(int CategoryID)
         {
             var dt = _dbHelper.ExecuteSProcedureReturnDataTable("GetProductsByASCPriceByCategoryID", "@CategoryID", CategoryID);
 
-            // Chuyển đổi kết quả trả về sang danh sách các đối tượng SanPhamModel
-            var sanPhams = dt.ConvertTo<SanPhamModel>().ToList();
+            // Chuyển đổi kết quả trả về sang danh sách các đối tượng ProductUserModel
+            var sanPhams = dt.ConvertTo<ProductUserModel>().ToList();
             return sanPhams;
         }
 
-        public List<SanPhamModel> GetProductDesc(int CategoryID)
+        public List<ProductUserModel> GetProductDesc(int CategoryID)
         {
             var dt = _dbHelper.ExecuteSProcedureReturnDataTable("GetProductsByDESCPriceByCategoryID",
             "@CategoryID", CategoryID);
 
-            // Chuyển đổi kết quả trả về sang danh sách các đối tượng SanPhamModel
-            var sanPhams = dt.ConvertTo<SanPhamModel>().ToList();
+            // Chuyển đổi kết quả trả về sang danh sách các đối tượng ProductUserModel
+            var sanPhams = dt.ConvertTo<ProductUserModel>().ToList();
             return sanPhams;
         }
 
-        public List<SanPhamModel> GetProductMeMory(int CategoryID, int Memory)
+        public List<ProductUserModel> GetProductMeMory(int CategoryID, int Memory)
         {
             var dt = _dbHelper.ExecuteSProcedureReturnDataTable("GetMeMoryByCategoryID", "@CategoryID", CategoryID, "@Memory", Memory);
 
-            // Chuyển đổi kết quả trả về sang danh sách các đối tượng SanPhamModel
-            var sanPhams = dt.ConvertTo<SanPhamModel>().ToList();
+            // Chuyển đổi kết quả trả về sang danh sách các đối tượng ProductUserModel
+            var sanPhams = dt.ConvertTo<ProductUserModel>().ToList();
             return sanPhams;
         }
-        public List<SanPhamModel> GetProductPrice(int CategoryID , int min , int max)
+        public List<ProductUserModel> GetProductPrice(int CategoryID , int min , int max)
         {
             var dt = _dbHelper.ExecuteSProcedureReturnDataTable("GetProductsByPriceRangeByCategoryID", "@CategoryID" , CategoryID, "@MinPrice", min, "@MaxPrice", max);
 
-            // Chuyển đổi kết quả trả về sang danh sách các đối tượng SanPhamModel
-            var sanPhams = dt.ConvertTo<SanPhamModel>().ToList();
+            // Chuyển đổi kết quả trả về sang danh sách các đối tượng ProductUserModel
+            var sanPhams = dt.ConvertTo<ProductUserModel>().ToList();
             return sanPhams;
         }
-        public List<SanPhamModel> GetSanPhamByCategoryID(int CategoryID)
+        public List<ProductUserModel> GetSanPhamByCategoryID(int CategoryID)
         {
             string msgError = "";
             try
@@ -118,7 +119,7 @@ namespace DAL
                 var dt = _dbHelper.ExecuteSProcedureReturnDataTable("GetProductsByCategory", "@CategoryId", CategoryID);
                 if (!string.IsNullOrEmpty(msgError))
                     throw new Exception(msgError);
-                var sanPham = dt.ConvertTo<SanPhamModel>().ToList();
+                var sanPham = dt.ConvertTo<ProductUserModel>().ToList();
                 return sanPham;
             }
             catch (Exception ex)
@@ -127,7 +128,7 @@ namespace DAL
             }
         }
 
-        public List<SanPhamModel> PagingByCategory(int CategoryID, int PageSize, int PageNumber)
+        public List<ProductUserModel> PagingByCategory(int CategoryID, int PageSize, int PageNumber)
         {
             string msgError = "";
             try
@@ -139,7 +140,7 @@ namespace DAL
                     );
                 if (!string.IsNullOrEmpty(msgError))
                     throw new Exception(msgError);
-                var sanPham = dt.ConvertTo<SanPhamModel>().ToList();
+                var sanPham = dt.ConvertTo<ProductUserModel>().ToList();
                 return sanPham;
             }
             catch (Exception ex)

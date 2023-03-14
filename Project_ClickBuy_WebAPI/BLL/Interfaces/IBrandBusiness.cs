@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ClickBuy.Model.ViewModel;
 
 namespace BLL.Interfaces
 {
     public interface IBrandBusiness
     {
-        List<BrandModel> GetAllBrand();
+        List<BrandUserModel> GetAllBrandz();
         bool CreateBrand(BrandModel model);
         bool UpdateBrand(BrandModel model);
         bool DeleteBrand(int BrandID);

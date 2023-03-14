@@ -10,4 +10,11 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\ClickBuy.BLL.csproj" />
+    <ProjectReference Include="..\ClickBuy.PublicWeb\ClickBuy.PublicWeb.csproj" />
+    <ProjectReference Include="..\DAL\ClickBuy.DAL.csproj" />
+    <ProjectReference Include="..\Modell\ClickBuy.Model.csproj" />
+  </ItemGroup>
+
 </Project>

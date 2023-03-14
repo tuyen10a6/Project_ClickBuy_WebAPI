@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using ClickBuy.Model.ViewModel;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace DAL.Interfaces
 {
     public interface IBrandRepository
     {
-        List<BrandModel> GetAllBrand();
+        List<BrandUserModel> GetAllBrand();
         bool CreateBrand(BrandModel model);
         bool UpdateBrand(BrandModel model);
         bool DeleteBrand(int BrandID);

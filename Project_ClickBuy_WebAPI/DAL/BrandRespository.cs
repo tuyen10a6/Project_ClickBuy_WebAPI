@@ -1,4 +1,5 @@
-﻿using DAL.Helper;
+﻿using ClickBuy.Model.ViewModel;
+using DAL.Helper;
 using DAL.Interfaces;
 using Model;
 using System;
@@ -58,11 +59,11 @@ namespace DAL
             }
         }
 
-        public List<BrandModel> GetAllBrand()
+        public List<BrandUserModel> GetAllBrand()
         {
             var proName = "GetAllBrand";
             var result = _databaseHelper.ExecuteSProcedureReturnDataTable(proName);
-            var ListBrand = result.ConvertTo<BrandModel>().ToList();
+            var ListBrand = result.ConvertTo<BrandUserModel>().ToList();
             return ListBrand;
         }
 

@@ -1,9 +1,11 @@
 ﻿using BLL.Interfaces;
+using ClickBuy.Model.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Model;
 
-namespace Project_ClickBuy_WebAPI.Controllers
+namespace ClickBuy.AdminApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -14,11 +16,12 @@ namespace Project_ClickBuy_WebAPI.Controllers
         {
             _sanphamBusiness = SanPhamBus;
         }
+       
         [Route("GetAllBrands")]
         [HttpGet]
-        public List<BrandModel> GetAllBrand()
+        public List<BrandUserModel> GetAllBrand()
         {
-            return _sanphamBusiness.GetAllBrand();
+            return _sanphamBusiness.GetAllBrandz();
         }
         [Route("CreateBrand")]
         [HttpPost]

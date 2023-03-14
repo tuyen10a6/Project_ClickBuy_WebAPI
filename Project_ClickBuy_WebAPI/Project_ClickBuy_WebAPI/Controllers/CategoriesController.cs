@@ -18,7 +18,7 @@ namespace Project_ClickBuy_WebAPI.Controllers
         [HttpGet]
         public IActionResult GetAllCategories()
         {
-            var result = _sanphamBusiness.GetAllCate();
+            var result = _sanphamBusiness.GetAllCateUser();
             return Ok(result);
         }
         [Route("AddCategory")]

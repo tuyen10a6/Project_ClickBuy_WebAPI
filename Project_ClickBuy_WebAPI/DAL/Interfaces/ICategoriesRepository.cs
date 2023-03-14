@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using ClickBuy.Model.ViewModel;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,18 +10,18 @@ namespace DAL.Interfaces
 {
     public interface ICategoriesRepository
     {
-        List<CategoriesModel> GetAllCate();
+        List<CategoryUserModel> GetAllCate();
         bool CreateSanPham(CategoriesModel model);
         bool UpdateSanPham( CategoriesModel model);
 
         bool DeleteCategory(int CategoryID);
 
-        List<SanPhamModel> GetSanPhamByCategoryID(int CategoryID);
-        List<SanPhamModel> GetProductPrice(int CategoryID , int min , int max);
-        List<SanPhamModel> GetProductMeMory(int CategoryID, int Memory);
-        List<SanPhamModel> GetProductASC(int CategoryID);
-        List<SanPhamModel> GetProductDesc(int CategoryID);  
-        List<SanPhamModel> PagingByCategory(int CategoryID , int PageSize , int PageNumber);
+        List<ProductUserModel> GetSanPhamByCategoryID(int CategoryID);
+        List<ProductUserModel> GetProductPrice(int CategoryID , int min , int max);
+        List<ProductUserModel> GetProductMeMory(int CategoryID, int Memory);
+        List<ProductUserModel> GetProductASC(int CategoryID);
+        List<ProductUserModel> GetProductDesc(int CategoryID);  
+        List<ProductUserModel> PagingByCategory(int CategoryID , int PageSize , int PageNumber);
         List<GetAllBrandByCategoryModel> getAllBrandByCategoryModels(int CategoryID);
 
     }
