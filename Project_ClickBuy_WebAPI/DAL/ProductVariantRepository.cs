@@ -1,4 +1,5 @@
 ﻿using Azure.Core;
+using ClickBuy.Model.ViewModel;
 using DAL.Helper;
 using Microsoft.Identity.Client;
 using Model;
@@ -83,15 +84,15 @@ namespace DAL
                 throw ex;
             }
         }
-        public List<ProductVariantModel> GetProductVariantIdProduct(int ProductID)
+        public List<ProductVariantUserModel> GetProductVariantIdProduct(int ProductID)
         {
             string msgError = "";
             try
             {
-                var dt = _dbHelper.ExecuteSProcedureReturnDataTable("SearchProductNameByProductVariant", "@ProductName", ProductID);
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable("GetProductVariantByProduct", "@ProductID", ProductID);
                 if (!string.IsNullOrEmpty(msgError))
                     throw new Exception(msgError);
-                var sanPham = dt.ConvertTo<ProductVariantModel>().ToList();
+                var sanPham = dt.ConvertTo<ProductVariantUserModel>().ToList();
                 return sanPham;
             }
             catch (Exception ex)

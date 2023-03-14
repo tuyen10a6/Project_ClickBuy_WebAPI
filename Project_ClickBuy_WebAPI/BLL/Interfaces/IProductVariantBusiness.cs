@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using ClickBuy.Model.ViewModel;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace BLL.Interfaces
 
         bool UpdateProductVariant(ProductVariantModel model);
         bool DeteteProductVariant(int VariantID);
-        List<ProductVariantModel> GetProductVariantIdProduct(int ProductID);
+        List<ProductVariantUserModel> GetProductVariantIdProduct(int ProductID);
 
         List<ProductVariantModel> SearchProductVariant(string VariantName);
         ProductVariantModel GetIDProductVariant(int productVariantID);

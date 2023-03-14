@@ -1,4 +1,5 @@
 ﻿using BLL.Interfaces;
+using ClickBuy.Model.ViewModel;
 using DAL;
 using Model;
 using System;
@@ -39,7 +40,7 @@ namespace BLL
 
         }
 
-        public List<ProductVariantModel> GetProductVariantIdProduct(int ProductID)
+        public List<ProductVariantUserModel> GetProductVariantIdProduct(int ProductID)
         {
             return _res.GetProductVariantIdProduct(ProductID);
         }
@@ -48,7 +49,6 @@ namespace BLL
         {
             return _res.SearchProductVariant(VariantName);
         }
-
         public bool UpdateProductVariant(ProductVariantModel model)
         {
             throw new NotImplementedException();
